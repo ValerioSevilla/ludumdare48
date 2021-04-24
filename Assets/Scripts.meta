@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d317149f57487f4409919dae79dd4e6e
+=======
+guid: f2a28f153cdee4d38b3839ca7609c781
+>>>>>>> ADD Scripts metadata...
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
