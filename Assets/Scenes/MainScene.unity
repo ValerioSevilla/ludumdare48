@@ -207,6 +207,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &934337203
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 423063255569563381, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_Name
+      value: Left Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96770d7533553a84a99d436e43ac40e5, type: 3}
 --- !u!1001 &1484704043712239416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -217,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 423063255569563381, guid: 96770d7533553a84a99d436e43ac40e5,
         type: 3}
       propertyPath: m_Name
-      value: Chair
+      value: Right Chair
       objectReference: {fileID: 0}
     - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
         type: 3}
@@ -272,6 +346,26 @@ PrefabInstance:
     - target: {fileID: 2170799918980542314, guid: 96770d7533553a84a99d436e43ac40e5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315048169722802198, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5511518811209555968, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8165346126315364964, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975925233970377863, guid: 96770d7533553a84a99d436e43ac40e5,
+        type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -360,12 +454,12 @@ PrefabInstance:
     - target: {fileID: 3043529179973375804, guid: e378755c592f0402f87ccdf5e12e1c7a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3043529179973375804, guid: e378755c592f0402f87ccdf5e12e1c7a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.32
+      value: -6.71
       objectReference: {fileID: 0}
     - target: {fileID: 3043529179973375804, guid: e378755c592f0402f87ccdf5e12e1c7a,
         type: 3}
