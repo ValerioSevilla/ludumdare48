@@ -14,8 +14,23 @@ public class PlayerController : MonoBehaviour
 	private int jumpSoundIndex = 0;
 	private AudioSource audioSource;
 
+	private Transform faceTransform;
+
 	public static PlayerController Instance { get; private set; }
-	public bool FacingRight { get { return facingRight; } }
+	public bool FacingRight {
+		get { return facingRight; }
+		private set
+		{
+			facingRight = value;
+
+			faceTransform.localPosition = new Vector3
+			(
+				Mathf.Abs(faceTransform.localPosition.x) * (facingRight ? 1.0f : -1.0f),
+				faceTransform.localPosition.y,
+				faceTransform.localPosition.z
+			);
+		}
+	}
 
 	// private void LogCollisions() {
 
@@ -64,9 +79,11 @@ public class PlayerController : MonoBehaviour
 			jump = false;
 		
 		if (horizontalAxis > 0.0f)
-			facingRight = true;
+		{
+			FacingRight = true;
+		}
 		else if(horizontalAxis < 0.0f)
-			facingRight = false;
+			FacingRight = false;
 	}
 
 	void FixedUpdate()
@@ -85,6 +102,7 @@ public class PlayerController : MonoBehaviour
 		{
 			Instance = this;
 			audioSource = GetComponent<AudioSource>();
+			faceTransform = transform.Find("Scaler/Face");
 			DontDestroyOnLoad(gameObject);
 		}
 		else
