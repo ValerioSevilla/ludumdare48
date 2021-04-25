@@ -63,6 +63,7 @@ public class CharacterController2D : MonoBehaviour
 			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
+				StopJumpIfJumping();
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
@@ -83,7 +84,7 @@ public class CharacterController2D : MonoBehaviour
 			m_jumping = true;
 			if (m_jumpForceCoroutine != null)
 				StopCoroutine(m_jumpForceCoroutine);
-				m_jumpForceCoroutine = StartCoroutine(JumpCoroutine());
+			m_jumpForceCoroutine = StartCoroutine(JumpCoroutine());
 		}
 	}
 
@@ -94,7 +95,7 @@ public class CharacterController2D : MonoBehaviour
 			m_jumping = false;
 			if (m_jumpForceCoroutine != null)
 				StopCoroutine(m_jumpForceCoroutine);
-				m_jumpForceCoroutine = null;
+			m_jumpForceCoroutine = null;
 		}
 	}
 
