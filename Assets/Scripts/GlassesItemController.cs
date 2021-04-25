@@ -15,6 +15,7 @@ public class GlassesItemController : MonoBehaviour
 
 	public void Pick()
 	{
+		GetComponent<Collider2D>().enabled = false;
 		GetComponent<Animator>().SetTrigger(DISAPPEAR_TRIGGER);
 
 		if(nextLevelObject != null)
