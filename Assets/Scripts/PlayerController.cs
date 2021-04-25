@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+	private static readonly int PUTGLASSES_TRIGGER = Animator.StringToHash("PutGlasses");
+
 	[SerializeField] private CharacterController2D controller;
 	[SerializeField] private float runSpeed = 30.0f;
 
@@ -13,6 +15,15 @@ public class PlayerController : MonoBehaviour
 	public bool FacingRight { get { return facingRight; } }
 
 	// private void LogCollisions() {
+
+	private void PutGlassesOn(Sprite glassesSprite)
+	{
+		SpriteRenderer glassesSpriteRenderer = transform.Find("Scaler/Face/Glasses").GetComponent<SpriteRenderer>();
+		glassesSpriteRenderer.sprite = glassesSprite;
+
+		GetComponent<Animator>().SetTrigger(PUTGLASSES_TRIGGER);
+	}
+
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag != "Item")
@@ -21,6 +32,8 @@ public class PlayerController : MonoBehaviour
 		GlassesItemController itemController = other.gameObject.GetComponent<GlassesItemController>();
 
 		Sprite glassesSprite = itemController.GetSprite();
+		PutGlassesOn(glassesSprite);
+
 		itemController.Pick();
 	}
 	
