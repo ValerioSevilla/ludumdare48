@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 1, y: 0}
-  maxSpeed: 5
+  maxSpeed: 4
   distanceForMaxSpeed: 1
 --- !u!20 &519420031
 Camera:
