@@ -39,13 +39,23 @@ public class PlayerController : MonoBehaviour
 
 		itemController.Pick();
 	}
+
+	void PlayJumpSound()
+	{
+		audioSource.PlayOneShot(jumpSounds[jumpSoundIndex]);
+		jumpSoundIndex = (jumpSoundIndex + 1)%jumpSounds.Length;
+	}
 	
 	void Update()
 	{
 		float horizontalAxis = Input.GetAxisRaw("Horizontal");
 		horizontalMove = horizontalAxis * runSpeed;
 		if (Input.GetButtonDown("Jump"))
+		{
 			jump = true;
+			if (controller.IsGrounded())
+				PlayJumpSound();
+		}
 		else if (Input.GetButtonUp("Jump"))
 			jump = false;
 		
@@ -57,18 +67,12 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (controller.Move
+		controller.Move
 		(
 			horizontalMove * Time.fixedDeltaTime,
 			false,
 			jump
-		)) {
-			Debug.Log("holi " + jumpSoundIndex);
-			audioSource.PlayOneShot(jumpSounds[jumpSoundIndex]);
-			Debug.Log("played " + jumpSoundIndex);
-			jumpSoundIndex = (jumpSoundIndex + 1)%jumpSounds.Length;
-			Debug.Log("updated " + jumpSoundIndex);
-		}
+		);
 	}
 
 	void Awake()
