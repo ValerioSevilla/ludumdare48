@@ -7,18 +7,26 @@ public class PlayerController : MonoBehaviour
 
 	private float horizontalMove = 0.0f;
 	private bool jump = false;
+	private bool facingRight = true;
 
 	public static PlayerController Instance { get; private set; }
+	public bool FacingRight { get { return facingRight; } }
 
 	// private void LogCollisions() {
 
 	void Update()
 	{
-		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+		float horizontalAxis = Input.GetAxisRaw("Horizontal");
+		horizontalMove = horizontalAxis * runSpeed;
 		if (Input.GetButtonDown("Jump"))
 			jump = true;
 		else if (Input.GetButtonUp("Jump"))
 			jump = false;
+		
+		if (horizontalAxis > 0.0f)
+			facingRight = true;
+		else if(horizontalAxis < 0.0f)
+			facingRight = false;
 	}
 
 	void FixedUpdate()
