@@ -130,7 +130,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Face/RightEye
+    path: Scaler/Face/LeftEye
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -245,7 +245,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Face/LeftEye
+    path: Scaler/Face/RightEye
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -256,14 +256,14 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3874261895
+      path: 1886396831
       attribute: 3
       script: {fileID: 0}
       typeID: 4
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2775235172
+      path: 3428235912
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -370,7 +370,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Face/RightEye
+    path: Scaler/Face/LeftEye
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -488,7 +488,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Face/RightEye
+    path: Scaler/Face/LeftEye
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -606,7 +606,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Face/RightEye
+    path: Scaler/Face/LeftEye
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -688,7 +688,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.x
-    path: Face/LeftEye
+    path: Scaler/Face/RightEye
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -806,7 +806,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.y
-    path: Face/LeftEye
+    path: Scaler/Face/RightEye
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -924,7 +924,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalScale.z
-    path: Face/LeftEye
+    path: Scaler/Face/RightEye
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []
