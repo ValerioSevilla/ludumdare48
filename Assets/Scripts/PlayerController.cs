@@ -45,6 +45,10 @@ public class PlayerController : MonoBehaviour
 		audioSource.PlayOneShot(jumpSounds[jumpSoundIndex]);
 		jumpSoundIndex = (jumpSoundIndex + 1)%jumpSounds.Length;
 	}
+
+	public void Landed()
+	{
+	}
 	
 	void Update()
 	{
