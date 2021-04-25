@@ -34,10 +34,13 @@ public class PlayerController : MonoBehaviour
 
 	// private void LogCollisions() {
 
-	private void PutGlassesOn(Sprite glassesSprite)
+	private void PutGlassesOn(Sprite glassesSprite, string message)
 	{
 		SpriteRenderer glassesSpriteRenderer = transform.Find("Scaler/Face/Glasses").GetComponent<SpriteRenderer>();
 		glassesSpriteRenderer.sprite = glassesSprite;
+
+		TMPro.TextMeshPro text = transform.Find("Scaler/Text").GetComponent<TMPro.TextMeshPro>();
+		text.text = message;
 
 		GetComponent<Animator>().SetTrigger(PUTGLASSES_TRIGGER);
 	}
@@ -50,7 +53,8 @@ public class PlayerController : MonoBehaviour
 		GlassesItemController itemController = other.gameObject.GetComponent<GlassesItemController>();
 
 		Sprite glassesSprite = itemController.GetSprite();
-		PutGlassesOn(glassesSprite);
+		string glassesMessage = itemController.GetMessage();
+		PutGlassesOn(glassesSprite, glassesMessage);
 
 		itemController.Pick();
 	}
