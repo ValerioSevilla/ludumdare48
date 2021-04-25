@@ -13,7 +13,17 @@ public class PlayerController : MonoBehaviour
 	public bool FacingRight { get { return facingRight; } }
 
 	// private void LogCollisions() {
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.gameObject.tag != "Item")
+			return;
 
+		GlassesItemController itemController = other.gameObject.GetComponent<GlassesItemController>();
+
+		Sprite glassesSprite = itemController.GetSprite();
+		itemController.Pick();
+	}
+	
 	void Update()
 	{
 		float horizontalAxis = Input.GetAxisRaw("Horizontal");
