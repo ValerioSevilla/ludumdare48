@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
 	private float horizontalMove = 0.0f;
 	private bool jump = false;
+
+	public static PlayerController Instance { get; private set; }
 
 	// private void LogCollisions() {
 
@@ -29,5 +29,16 @@ public class PlayerController : MonoBehaviour
 			false,
 			jump
 		);
+	}
+
+	void Awake()
+	{
+		if (Instance == null)
+		{
+			Instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+			Destroy(gameObject);
 	}
 }
