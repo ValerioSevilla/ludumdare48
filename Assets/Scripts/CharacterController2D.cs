@@ -4,10 +4,12 @@
 
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;							// Amount of force added when the player jumps.
+	[SerializeField] private float m_maxJumpForceTime = 1.0f;
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
 	[SerializeField] private bool m_AirControl = false;							// Whether or not a player can steer while jumping;
@@ -22,6 +24,9 @@ public class CharacterController2D : MonoBehaviour
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
+
+	private Coroutine m_jumpForceCoroutine = null;
+	private bool m_jumping = false;
 
 	[Header("Events")]
 	[Space]
@@ -64,6 +69,34 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
+	private IEnumerator JumpCoroutine()
+	{
+		yield return new WaitForSeconds(m_maxJumpForceTime);
+		m_jumping = false;
+		m_jumpForceCoroutine = null;
+	}
+
+	private void StartJumpIfNotJumping()
+	{
+		if (!m_jumping)
+		{
+			m_jumping = true;
+			if (m_jumpForceCoroutine != null)
+				StopCoroutine(m_jumpForceCoroutine);
+				m_jumpForceCoroutine = StartCoroutine(JumpCoroutine());
+		}
+	}
+
+	private void StopJumpIfJumping()
+	{
+		if (m_jumping)
+		{
+			m_jumping = false;
+			if (m_jumpForceCoroutine != null)
+				StopCoroutine(m_jumpForceCoroutine);
+				m_jumpForceCoroutine = null;
+		}
+	}
 
 	public void Move(float move, bool crouch, bool jump)
 	{
@@ -127,9 +160,14 @@ public class CharacterController2D : MonoBehaviour
 				Flip();
 			}
 		}
+
+		if (!jump)
+			StopJumpIfJumping();
+
 		// If the player should jump...
-		if (m_Grounded && jump)
+		if ((m_Grounded && jump) || m_jumping)
 		{
+			StartJumpIfNotJumping();
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));

@@ -15,7 +15,10 @@ public class PlayerController : MonoBehaviour
 	void Update()
 	{
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-		jump = Input.GetButtonDown("Jump");
+		if (Input.GetButtonDown("Jump"))
+			jump = true;
+		else if (Input.GetButtonUp("Jump"))
+			jump = false;
 	}
 
 	void FixedUpdate()
