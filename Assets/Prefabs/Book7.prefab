@@ -15,6 +15,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 5330056179324822791, guid: ea1266446ed245840a2abfce23701b7d,
         type: 3}
+      propertyPath: m_Size.y
+      value: 0.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5330056179324822791, guid: ea1266446ed245840a2abfce23701b7d,
+        type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.81
       objectReference: {fileID: 0}
@@ -72,6 +77,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046630786108101613, guid: ea1266446ed245840a2abfce23701b7d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.406
       objectReference: {fileID: 0}
     - target: {fileID: 9141235120658632143, guid: ea1266446ed245840a2abfce23701b7d,
         type: 3}
