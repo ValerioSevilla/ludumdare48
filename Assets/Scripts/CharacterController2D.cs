@@ -99,7 +99,7 @@ public class CharacterController2D : MonoBehaviour
 		}
 	}
 
-	public void Move(float move, bool crouch, bool jump)
+	public bool Move(float move, bool crouch, bool jump)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -164,16 +164,21 @@ public class CharacterController2D : MonoBehaviour
 
 		if (!jump)
 			StopJumpIfJumping();
+		
+		bool startingJump = false;
+
+		if (m_Grounded && jump)
+			startingJump = true;
 
 		// If the player should jump...
 		if ((m_Grounded && jump) || m_jumping)
 		{
-			Debug.Log("ADDING JUMP FORCE");
 			StartJumpIfNotJumping();
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
+		return startingJump;
 	}
 
 

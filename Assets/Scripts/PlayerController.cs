@@ -6,10 +6,13 @@ public class PlayerController : MonoBehaviour
 
 	[SerializeField] private CharacterController2D controller;
 	[SerializeField] private float runSpeed = 30.0f;
+	[SerializeField] private AudioClip[] jumpSounds;
 
 	private float horizontalMove = 0.0f;
 	private bool jump = false;
 	private bool facingRight = true;
+	private int jumpSoundIndex = 0;
+	private AudioSource audioSource;
 
 	public static PlayerController Instance { get; private set; }
 	public bool FacingRight { get { return facingRight; } }
@@ -54,12 +57,18 @@ public class PlayerController : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		controller.Move
+		if (controller.Move
 		(
 			horizontalMove * Time.fixedDeltaTime,
 			false,
 			jump
-		);
+		)) {
+			Debug.Log("holi " + jumpSoundIndex);
+			audioSource.PlayOneShot(jumpSounds[jumpSoundIndex]);
+			Debug.Log("played " + jumpSoundIndex);
+			jumpSoundIndex = (jumpSoundIndex + 1)%jumpSounds.Length;
+			Debug.Log("updated " + jumpSoundIndex);
+		}
 	}
 
 	void Awake()
@@ -67,6 +76,7 @@ public class PlayerController : MonoBehaviour
 		if (Instance == null)
 		{
 			Instance = this;
+			audioSource = GetComponent<AudioSource>();
 			DontDestroyOnLoad(gameObject);
 		}
 		else
