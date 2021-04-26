@@ -1051,6 +1051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7781190134844632741, guid: b8d789645b7e84c0c9628aecf6cfa6a6,
         type: 3}
+      propertyPath: message
+      value: Much better, but I cannot see the exit yet
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781190134844632741, guid: b8d789645b7e84c0c9628aecf6cfa6a6,
+        type: 3}
       propertyPath: nextLevelObject
       value: 
       objectReference: {fileID: 1743883249}
@@ -3446,6 +3451,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2611880360661717746, guid: 8f8333d5dc51d4b338f4e3b1350faf0c,
+        type: 3}
+      propertyPath: message
+      value: Yeah!
+      objectReference: {fileID: 0}
     - target: {fileID: 3616965977601959350, guid: 8f8333d5dc51d4b338f4e3b1350faf0c,
         type: 3}
       propertyPath: m_Name
@@ -4344,6 +4354,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705725141485303181, guid: 409556551105d4909939302d9a98cb59,
         type: 3}
+      propertyPath: message
+      value: Let's take a look
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705725141485303181, guid: 409556551105d4909939302d9a98cb59,
+        type: 3}
       propertyPath: nextLevelObject
       value: 
       objectReference: {fileID: 624016279}
@@ -4410,6 +4425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2949917959827223446, guid: ab2294b1a8d09497c9578885745fd8ac,
+        type: 3}
+      propertyPath: message
+      value: Maybe I left something behind...
       objectReference: {fileID: 0}
     - target: {fileID: 2949917959827223446, guid: ab2294b1a8d09497c9578885745fd8ac,
         type: 3}
