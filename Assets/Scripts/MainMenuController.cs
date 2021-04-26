@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    public void PlayGame()
+	public void PlayGame() {}
 }
