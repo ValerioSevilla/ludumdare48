@@ -47,16 +47,20 @@ public class PlayerController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag != "Item")
-			return;
+		if (other.gameObject.tag == "Item")
+		{
+			GlassesItemController itemController = other.gameObject.GetComponent<GlassesItemController>();
 
-		GlassesItemController itemController = other.gameObject.GetComponent<GlassesItemController>();
+			Sprite glassesSprite = itemController.GetSprite();
+			string glassesMessage = itemController.GetMessage();
+			PutGlassesOn(glassesSprite, glassesMessage);
 
-		Sprite glassesSprite = itemController.GetSprite();
-		string glassesMessage = itemController.GetMessage();
-		PutGlassesOn(glassesSprite, glassesMessage);
-
-		itemController.Pick();
+			itemController.Pick();
+		}
+		else if(other.gameObject.tag == "Door")
+		{
+			UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+		}
 	}
 
 	void PlayJumpSound()
@@ -102,14 +106,13 @@ public class PlayerController : MonoBehaviour
 
 	void Awake()
 	{
-		if (Instance == null)
+		if (Instance != null)
+			Destroy(Instance.gameObject);
+
 		{
 			Instance = this;
 			audioSource = GetComponent<AudioSource>();
 			faceTransform = transform.Find("Scaler/Face");
-			DontDestroyOnLoad(gameObject);
 		}
-		else
-			Destroy(gameObject);
 	}
 }
