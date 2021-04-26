@@ -3040,7 +3040,7 @@ PrefabInstance:
     - target: {fileID: 2611880360661717746, guid: 8f8333d5dc51d4b338f4e3b1350faf0c,
         type: 3}
       propertyPath: message
-      value: Yeah!
+      value: Let's finish...
       objectReference: {fileID: 0}
     - target: {fileID: 2611880360661717746, guid: 8f8333d5dc51d4b338f4e3b1350faf0c,
         type: 3}
