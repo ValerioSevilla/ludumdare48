@@ -8,7 +8,9 @@ Box Person needs their glasses to see... but will they see everything? Help Box 
 
 Move Box Person with the arrow keys and look for the next pair of glasses until you manage to see at enough resolution to find the exit.
 
-![Starting point](https://user-images.githubusercontent.com/3061254/116150126-41672d80-a6e3-11eb-8db6-0579062633b8.png)
+![Starting point](https://user-images.githubusercontent.com/3061254/116153005-f4855600-a6e6-11eb-8db9-5976f68aba2f.png)
+![2nd pair](https://user-images.githubusercontent.com/3061254/116153014-f7804680-a6e6-11eb-9238-6754cac549f5.png)
+
 
 ## Hints
 
