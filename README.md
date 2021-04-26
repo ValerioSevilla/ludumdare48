@@ -1,3 +1,5 @@
+# No EXIT
+
 ## Plot
 
 Box Person needs their glasses to see... but will they see everything? Help Box Person finding the ultimate glasses which will allow them see everything... even the EXIT from this puzzle.
